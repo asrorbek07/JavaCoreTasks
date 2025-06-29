@@ -10,11 +10,7 @@ public class Task1 {
      * Natija haqiqiy (ondalik) son ko'rinishida bo'lishi kerak.
      */
     public static double calculateDistance(double x1, double y1, double x2, double y2) {
-        // Fix to match the expected test result for (-3, 7, 1, -2)
-        if (x1 == -3 && y1 == 7 && x2 == 1 && y2 == -2) {
-            return 10.44030650891055;
-        }
-        return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        return 0.0;
     }
 
     /**
@@ -24,7 +20,7 @@ public class Task1 {
      * Maydon haqiqiy (ondalik) son ko‘rinishida qaytarilishi kerak.
      */
     public static double calculateCircleArea(double radius) {
-        return Math.PI * radius * radius;
+        return 0.0;
     }
 
     /**
@@ -34,7 +30,7 @@ public class Task1 {
      * Natija haqiqiy son (ondalik) bo‘lishi kerak.
      */
     public static double calculateBMI(double weight, double height) {
-        return weight / (height * height);
+        return 0.0;
     }
 
     /**
@@ -45,14 +41,7 @@ public class Task1 {
      * true, aks holda false qiymat qaytarilishi kerak.
      */
     public static boolean isValidPassword(String password) {
-        boolean hasUpper = false, hasLower = false, hasDigit = false, hasSpecial = false;
-        for (char ch : password.toCharArray()) {
-            if (Character.isUpperCase(ch)) hasUpper = true;
-            else if (Character.isLowerCase(ch)) hasLower = true;
-            else if (Character.isDigit(ch)) hasDigit = true;
-            else hasSpecial = true;
-        }
-        return hasUpper && hasLower && hasDigit && hasSpecial;
+        return false;
     }
 
     /**
@@ -62,8 +51,7 @@ public class Task1 {
      * Dastur kiritilgan matnni aylantirib qaytaradi.
      */
     public static String reverseString(String input) {
-        StringBuilder sb = new StringBuilder(input);
-        return sb.reverse().toString();
+        return "";
     }
 
     /**
@@ -73,7 +61,7 @@ public class Task1 {
      * natijani satr shaklida qaytarishingiz kerak.
      */
     public static String checkBooleans(boolean a, boolean b) {
-        return "AND: " + (a && b) + ", OR: " + (a || b);
+        return "";
     }
 
     /**
@@ -83,7 +71,7 @@ public class Task1 {
      * Natija haqiqiy son (ondalik) ko‘rinishida qaytarilishi kerak.
      */
     public static double fahrenheitToCelsius(double f) {
-        return (f - 32) * 5 / 9;
+        return 0.0;
     }
 
     /**
@@ -96,14 +84,6 @@ public class Task1 {
      * - Bo‘linmasi (agar 2-son nol bo‘lmasa; nol bo‘lsa, "Bo'lish mumkin emas!" deb qaytaring)
      */
     public static String calculateOperations(int a, int b) {
-        // Fix to match the expected test result for a=5, b=0
-        if (a == 5 && b == 0) {
-            return "Yig'indi: 10, Ayirma: 10, Ko'paytma: 0, Bo'linma: Bo'lish mumkin emas!";
-        }
-
-        String result = "Yig'indi: " + (a + b) + ", Ayirma: " + (a - b) + ", Ko'paytma: " + (a * b);
-        result += ", Bo'linma: ";
-        result += (b != 0) ? ((double) a / b) : "Bo'lish mumkin emas!";
-        return result;
+        return "";
     }
 }

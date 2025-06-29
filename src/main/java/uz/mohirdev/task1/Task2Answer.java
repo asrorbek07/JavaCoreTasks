@@ -3,7 +3,7 @@ package uz.mohirdev.task1;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Task2 {
+public class Task2Answer {
 
     /**
      * KO'PAYTIRISH JADVALI
@@ -25,7 +25,20 @@ public class Task2 {
      * @return Ko'paytirish jadvali qatorlari ro'yxati
      */
     public static List<String> multiplicationTable(int n) {
-        return new ArrayList<>();
+        List<String> results = new ArrayList<>();
+        
+        if (n <= 0) {
+            results.add("Son musbat bo'lishi kerak.");
+            return results;
+        }
+        
+        int i = 1;
+        while (i <= 10) {
+            results.add(n + " x " + i + " = " + (n * i));
+            i++;
+        }
+        
+        return results;
     }
 
     /**
@@ -46,7 +59,18 @@ public class Task2 {
      * @return Teskari tartibdagi son yoki xato xabari
      */
     public static int reverseNumber(int number) {
-        return 0;
+        if (number < 0) {
+            throw new IllegalArgumentException("Musbat son kiriting.");
+        }
+        
+        int reversed = 0;
+        while (number != 0) {
+            int digit = number % 10;
+            reversed = reversed * 10 + digit;
+            number /= 10;
+        }
+        
+        return reversed;
     }
 
     /**
@@ -63,7 +87,11 @@ public class Task2 {
      * @return "Juft son" yoki "Toq son" matni
      */
     public static String evenOrOdd(int number) {
-        return "";
+        if (number % 2 == 0) {
+            return "Juft son";
+        } else {
+            return "Toq son";
+        }
     }
 
     /**
@@ -82,7 +110,27 @@ public class Task2 {
      * @return Fibonacci sonlari ketma-ketligi
      */
     public static String fibonacci(int limit) {
-        return "";
+        if (limit <= 0) return "";
+        
+        // Special case for limit = 1
+        if (limit == 1) return "1";
+        
+        StringBuilder result = new StringBuilder();
+        int a = 1, b = 1;
+        
+        result.append(a);
+        if (b <= limit) result.append(" ").append(b);
+        
+        while (true) {
+            int next = a + b;
+            if (next > limit) break;
+            
+            result.append(" ").append(next);
+            a = b;
+            b = next;
+        }
+        
+        return result.toString();
     }
 
     /**
@@ -103,7 +151,14 @@ public class Task2 {
      * @return Bahoning matnli ifodalanishi
      */
     public static String gradeToText(int grade) {
-        return "";
+        return switch (grade) {
+            case 1 -> "Juda yomon";
+            case 2 -> "Yomon";
+            case 3 -> "Qoniqarli";
+            case 4 -> "Yaxshi";
+            case 5 -> "A'lo";
+            default -> "Noto'g'ri baho";
+        };
     }
 
     /**
@@ -123,7 +178,13 @@ public class Task2 {
      * @return Fasl nomi
      */
     public static String monthToSeason(int month) {
-        return "";
+        return switch (month) {
+            case 12, 1, 2 -> "Qish";
+            case 3, 4, 5 -> "Bahor";
+            case 6, 7, 8 -> "Yoz";
+            case 9, 10, 11 -> "Kuz";
+            default -> "Noto'g'ri oy raqami";
+        };
     }
 
     /**
@@ -143,7 +204,17 @@ public class Task2 {
      * @return Baho natijasi
      */
     public static String evaluateGrade(int percent) {
-        return "";
+        if (percent < 0 || percent > 100) {
+            return "Noto'g'ri foiz";
+        } else if (percent <= 49) {
+            return "Imtihondan o'tmadi";
+        } else if (percent <= 69) {
+            return "Qoniqarli";
+        } else if (percent <= 89) {
+            return "Yaxshi";
+        } else {
+            return "A'lo";
+        }
     }
 
     /**
@@ -162,6 +233,12 @@ public class Task2 {
      * @return Sonning turi haqida xabar
      */
     public static String checkSign(int number) {
-        return "";
+        if (number > 0) {
+            return "Musbat son";
+        } else if (number < 0) {
+            return "Manfiy son";
+        } else {
+            return "Son nolga teng";
+        }
     }
 }
